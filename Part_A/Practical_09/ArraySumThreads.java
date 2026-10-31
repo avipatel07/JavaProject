@@ -1,0 +1,1 @@
+public class ArraySumThreads { public static void main(String[] a)throws Exception{int[] n={1,2,3,4,5,6};int[] sums=new int[2];Thread x=new Thread(()->{for(int i=0;i<3;i++)sums[0]+=n[i];});Thread y=new Thread(()->{for(int i=3;i<6;i++)sums[1]+=n[i];});x.start();y.start();x.join();y.join();System.out.println("Total: "+(sums[0]+sums[1]));} }

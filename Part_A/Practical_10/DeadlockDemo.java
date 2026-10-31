@@ -1,0 +1,1 @@
+public class DeadlockDemo { public static void main(String[] a){Object first=new Object(),second=new Object();Thread t1=new Thread(()->{synchronized(first){synchronized(second){System.out.println("Worker 1 complete");}}});Thread t2=new Thread(()->{synchronized(first){synchronized(second){System.out.println("Worker 2 complete");}}});t1.start();t2.start();} }

@@ -1,0 +1,1 @@
+public class PackageDemo { public static void main(String[] a){System.out.println("Package exercise: compile classes with javac -d out and create a JAR using jar --create --file app.jar -C out .");} }

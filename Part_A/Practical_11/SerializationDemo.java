@@ -1,0 +1,3 @@
+import java.io.*;
+class UserRecord implements Serializable { private static final long serialVersionUID=1L; String name; transient String session; UserRecord(String n,String s){name=n;session=s;} }
+public class SerializationDemo { public static void main(String[] a)throws Exception{UserRecord u=new UserRecord("Nia","TEMP");try(ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("user.dat"))){out.writeObject(u);}try(ObjectInputStream in=new ObjectInputStream(new FileInputStream("user.dat"))){UserRecord r=(UserRecord)in.readObject();System.out.println(r.name+" / session="+r.session);}} }

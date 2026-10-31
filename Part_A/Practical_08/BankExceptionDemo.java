@@ -1,0 +1,2 @@
+class LowBalanceException extends Exception { LowBalanceException(String m){super(m);} }
+public class BankExceptionDemo { static void withdraw(double balance,double amount)throws LowBalanceException{if(amount>balance)throw new LowBalanceException("Insufficient balance");System.out.println("Remaining: "+(balance-amount));} public static void main(String[] a){try{withdraw(500,700);}catch(LowBalanceException e){System.out.println(e.getMessage());}} }

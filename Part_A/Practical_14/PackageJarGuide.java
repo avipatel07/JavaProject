@@ -1,0 +1,1 @@
+public class PackageJarGuide { public static void main(String[] a){System.out.println("Compile: javac -d out src/**/*.java");System.out.println("Package: jar --create --file MiniBank.jar -C out .");System.out.println("Run: java -jar MiniBank.jar");} }

@@ -1,0 +1,2 @@
+class Wallet { private int balance=300; void spend(int amount){if(amount<=0)throw new IllegalArgumentException("Amount must be positive");if(amount>balance)throw new IllegalStateException("Not enough funds");balance-=amount;System.out.println("Balance: "+balance);} }
+public class InsufficientFundsDemo { public static void main(String[] a){Wallet w=new Wallet();try{w.spend(450);}catch(RuntimeException e){System.out.println(e.getMessage());}} }

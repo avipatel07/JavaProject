@@ -1,0 +1,2 @@
+import java.util.concurrent.*;
+public class ProducerConsumer { public static void main(String[] a)throws Exception{BlockingQueue<Integer> q=new ArrayBlockingQueue<>(2);Thread p=new Thread(()->{try{for(int i=1;i<=5;i++)q.put(i);}catch(InterruptedException e){Thread.currentThread().interrupt();}});Thread c=new Thread(()->{try{for(int i=1;i<=5;i++)System.out.println("Consumed "+q.take());}catch(InterruptedException e){Thread.currentThread().interrupt();}});p.start();c.start();p.join();c.join();} }

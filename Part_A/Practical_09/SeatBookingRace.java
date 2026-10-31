@@ -1,0 +1,2 @@
+class Seats { private int free=5; synchronized boolean reserve(int n){if(n>free)return false;free-=n;return true;} }
+public class SeatBookingRace { public static void main(String[] a)throws Exception{Seats s=new Seats();Thread t1=new Thread(()->System.out.println("Group A: "+s.reserve(4)));Thread t2=new Thread(()->System.out.println("Group B: "+s.reserve(3)));t1.start();t2.start();t1.join();t2.join();} }

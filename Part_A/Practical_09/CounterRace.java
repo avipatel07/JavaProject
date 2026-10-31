@@ -1,0 +1,2 @@
+import java.util.concurrent.atomic.AtomicInteger;
+public class CounterRace { public static void main(String[] a)throws Exception{AtomicInteger count=new AtomicInteger();Thread x=new Thread(()->{for(int i=0;i<10000;i++)count.incrementAndGet();});Thread y=new Thread(()->{for(int i=0;i<10000;i++)count.incrementAndGet();});x.start();y.start();x.join();y.join();System.out.println("Final count: "+count.get());} }
